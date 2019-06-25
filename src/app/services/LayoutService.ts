@@ -3,8 +3,8 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export default class LayoutService {
 
-  FIND_ALL_PAGES = 'http://localhost:3000/api/pages';
-  WIDGETS = 'http://localhost:3000/api/widgets';
+  FIND_ALL_PAGES = 'http://localhost:3001/api/pages';
+  WIDGETS = 'http://localhost:3001/api/widgets';
 
   appendWidget = widget =>
     fetch(this.WIDGETS);

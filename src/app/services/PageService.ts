@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export default class PageService {
-  PAGES_URL = 'http://localhost:3000/api/websites/WID/pages';
+  PAGES_URL = 'http://localhost:3001/api/websites/WID/pages';
 
   createPage = (wid, page) =>
     fetch(this.PAGES_URL.replace('WID', wid), {

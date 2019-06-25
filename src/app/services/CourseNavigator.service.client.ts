@@ -3,6 +3,6 @@ import { Injectable } from '@angular/core';
 export class CourseNavigatorServiceClient {
   findAllCourses = () =>
     fetch
-    ('http://localhost:8080/api/courses')
+    ('http://localhost:3001/api/courses')
       .then(response => response.json());
 }

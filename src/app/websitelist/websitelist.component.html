@@ -1,5 +1,7 @@
+<div class="container-fluid">
 <h1>Websites</h1>
 <div class="list-group">
+  <ul class="list-group">
   <a [routerLink]="'/websites/' + website._id + '/pages'"
      *ngFor="let website of websites"
      class="list-group-item">
@@ -16,8 +18,10 @@
     <i (click)="deleteWebsite(website)"
        class="fa fa-remove float-right"></i>
   </a>
+  </ul>
 </div>
 <br/>
 <button (click)="createWebsite()" class="btn btn-success">
   Create Website
 </button>
+</div>
