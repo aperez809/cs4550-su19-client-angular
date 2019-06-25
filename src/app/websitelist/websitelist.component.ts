@@ -16,8 +16,6 @@ export class WebsitelistComponent implements OnInit {
   ngOnInit() {
     this.service.findAllWebsites()
       .then(websites => this.websites = websites);
-
-    console.log(this.websites);
   }
 
   createWebsite() {
@@ -38,9 +36,15 @@ export class WebsitelistComponent implements OnInit {
     this.service.deleteWebsite(website._id)
       .then(status => {
         if (status.deletedCount === 1) {
+          console.log("found one");
           const websiteIndex = this.websites.indexOf(website);
+          console.log("website in questions found at index" + websiteIndex);
           this.websites.splice(websiteIndex, 1)
         }
+        else {
+          console.log("bgrewijgbirtugw " + status.deletedCount);
+        }
+
       });
   }
 }

@@ -1,24 +1,24 @@
 <div class="container-fluid">
 <h1>Websites</h1>
 <div class="list-group">
-  <ul class="list-group">
-  <a [routerLink]="'/websites/' + website._id + '/pages'"
-     *ngFor="let website of websites"
+  <a [routerLink]="'/websites/' + website._id + '/pages'" *ngFor="let website of websites"
      class="list-group-item">
     <span [hidden]="website.editing">{{website.title}}</span>
     <input
       [(ngModel)]="website.title"
       [hidden]="!website.editing"/>
-    <i [hidden]="website.editing"
+    <span class="float-right">
+    <button *ngIf="!website.editing"
        (click)="setEditing(website, true)"
-       class="fa fa-pencil float-right"></i>
-    <i [hidden]="!website.editing"
+       class="btn btn-warning float-right">Edit</button>
+    <button *ngIf="website.editing"
        (click)="setEditing(website, false)"
-       class="fa fa-check float-right"></i>
-    <i (click)="deleteWebsite(website)"
-       class="fa fa-remove float-right"></i>
+       class="btn btn-success float-right">Done</button>
+    <button
+      (click)="deleteWebsite(website)"
+      class="btn btn-danger float-right">Remove</button>
+      </span>
   </a>
-  </ul>
 </div>
 <br/>
 <button (click)="createWebsite()" class="btn btn-success">
